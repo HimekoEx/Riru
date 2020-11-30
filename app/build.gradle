@@ -68,4 +68,4 @@ repositories {
     mavenCentral()
 }
 
-apply from: project.file('signing.gradle')
+// apply from: project.file('signing.gradle')
