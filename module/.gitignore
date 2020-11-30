@@ -1,3 +1,4 @@
 /.externalNativeBuild
 /build
 /release
+/build-linux.gradle
