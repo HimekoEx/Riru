@@ -15,7 +15,7 @@
 #include "misc.h"
 #include "config.h"
 
-#define TMP_DIR "/dev"
+#define TMP_DIR CONFIG_DIR "/dev"
 #define DEV_RANDOM CONFIG_DIR "/dev_random"
 
 static const char *GetRandomName() {

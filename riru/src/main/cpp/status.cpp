@@ -15,7 +15,7 @@
 #include "config.h"
 #include "daemon/status.h"
 
-#define TMP_DIR "/dev"
+#define TMP_DIR CONFIG_DIR "/dev"
 
 static uint8_t WriteToSocket(uint8_t *buffer, uint32_t buffer_size) {
     struct sockaddr_un addr{};

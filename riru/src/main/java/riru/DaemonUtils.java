@@ -16,6 +16,8 @@ import java.util.Objects;
 
 public class DaemonUtils {
 
+    private final static String CONFIG_DIR = "/data/adb/riru";
+
     public static String readOriginalNativeBridge() {
         try (BufferedReader br = new BufferedReader(new FileReader(new File("/data/adb/riru/native_bridge")))) {
             char[] buf = new char[4096];
@@ -81,7 +83,7 @@ public class DaemonUtils {
             return false;
         }
 
-        return new File("/dev/riru_" + devRandom).exists();
+        return new File(CONFIG_DIR + "/dev/riru_" + devRandom).exists();
     }
 
     private static boolean deleteDir(File file) {
@@ -103,18 +105,18 @@ public class DaemonUtils {
 
         File file;
 
-        file = new File("/dev/riru_" + devRandom);
+        file = new File(CONFIG_DIR + "/dev/riru_" + devRandom);
         Log.i(Daemon.TAG, "Attempt to delete " + file + "...");
         if (!deleteDir(file)) {
-            file.renameTo(new File("/dev/riru_" + devRandom + "_" + System.currentTimeMillis()));
+            file.renameTo(new File(CONFIG_DIR + "/dev/riru_" + devRandom + "_" + System.currentTimeMillis()));
         } else {
             Log.i(Daemon.TAG, "Deleted " + file);
         }
 
-        file = new File("/dev/riru64_" + devRandom);
+        file = new File(CONFIG_DIR + "/dev/riru64_" + devRandom);
         Log.i(Daemon.TAG, "Attempt to delete " + file + "...");
         if (!deleteDir(file)) {
-            file.renameTo(new File("/dev/riru_" + devRandom + "_" + System.currentTimeMillis()));
+            file.renameTo(new File(CONFIG_DIR + "/dev/riru_" + devRandom + "_" + System.currentTimeMillis()));
         } else {
             Log.i(Daemon.TAG, "Deleted " + file + ".");
         }

@@ -228,11 +228,11 @@ void constructor() {
         && strcmp(cmdline, "zygote64") != 0
         && strcmp(cmdline, "usap32") != 0
         && strcmp(cmdline, "usap64") != 0) {
-        LOGW("not zygote (cmdline=%s)", cmdline);
+        LOGW("[riru]not zygote (cmdline=%s)", cmdline);
         return;
     }
 
-    LOGI("Riru %s (%d) in %s", RIRU_VERSION_NAME, RIRU_VERSION_CODE, cmdline);
+    LOGI("Riru-Shell %s (%d) in %s", RIRU_VERSION_NAME, RIRU_VERSION_CODE, cmdline);
 
     LOGI("config dir is %s", CONFIG_DIR);
 

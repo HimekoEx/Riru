@@ -26,6 +26,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         externalNativeBuild {
             cmake {
+                cppFlags "-Xclang -load -Xclang /root/zzWork/lib/libHikari.so"
                 arguments "-DRIRU_VERSION_NAME:STRING=${moduleProp['version']}",
                         "-DRIRU_VERSION_CODE:STRING=${moduleProp['versionCode']}",
                         "-DRIRU_API_VERSION=$apiVersion",

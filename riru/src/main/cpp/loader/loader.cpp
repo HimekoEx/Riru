@@ -146,7 +146,7 @@ __used __attribute__((constructor)) void constructor() {
         && strcmp(cmdline, "zygote64") != 0
         && strcmp(cmdline, "usap32") != 0
         && strcmp(cmdline, "usap64") != 0) {
-        LOGW("not zygote (cmdline=%s)", cmdline);
+        LOGW("[loader]not zygote (cmdline=%s)", cmdline);
         return;
     }
 
